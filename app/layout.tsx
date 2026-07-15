@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://bar-for-laguna.vercel.app"),
   title: "Bar Moshe, for Laguna Health",
   description:
-    "Less typing, more engineering judgment. A product-minded engineer who ships with Cursor and Claude Code as leverage, in Laguna Health's own brand.",
+    "Bar Moshe, AI Builder and Full-Stack Engineer, for the Product-Minded Engineer role at Laguna Health. Ships AI and full-stack products with Cursor and Claude Code; a working sample built in Laguna's brand.",
   // Private application page, never index it.
   robots: { index: false, follow: false },
 };
