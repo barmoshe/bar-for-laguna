@@ -1,0 +1,585 @@
+/* =========================================================================
+   bar-for-laguna, brand tokens + composition.
+
+   Read live off lagunahealth.com (getComputedStyle + screenshots):
+   deep-navy #000040 page, Source Serif 4 display, Poppins body, magenta->purple
+   gradient CTAs, alternating pastel bands (lavender / light-blue), a stat trio,
+   sparkle + speech-bubble motifs, scroll-reveal fade-ups. This file replicates
+   that composition; it is NOT a recolour of the starter.
+   ========================================================================= */
+
+.laguna-root {
+  /* --- surfaces --- */
+  --laguna-bg: #000040; /* deep navy page background */
+  --laguna-navy-soft: #0b0b52; /* lifted navy for panels on dark */
+  --laguna-lav: #eee6fe; /* lavender band */
+  --laguna-sky: #cceeff; /* light-blue band */
+
+  /* --- ink --- */
+  --laguna-ink: #000040; /* navy text on light bands */
+  --laguna-ink-soft: #4b4a76; /* muted navy on light */
+  --laguna-on-dark: #ffffff; /* text on navy */
+  --laguna-on-dark-soft: #c3c4ec; /* muted lavender-white on navy */
+
+  /* --- brand hues (exact) --- */
+  --laguna-purple: #783bf2;
+  --laguna-magenta: #e624c6;
+  --laguna-blue: #00a3f5;
+  --laguna-indigo: #3030f7;
+  --laguna-accent: #783bf2; /* the one accent (focus rings, links) */
+
+  /* --- gradients (exact angles from their site) --- */
+  --laguna-grad: linear-gradient(119deg, #e624c6, #783bf2);
+  --laguna-grad-blue: linear-gradient(288deg, #783bf2, #00a3f5);
+  --laguna-grad-indigo: linear-gradient(119deg, #e624c6, #3030f7);
+
+  --laguna-radius: 16px;
+  --laguna-radius-lg: 28px;
+  --laguna-pill: 999px;
+  --laguna-maxw: 72rem;
+  --laguna-serif-stack: var(--laguna-serif), "Source Serif 4", Georgia, serif;
+
+  background: var(--laguna-bg);
+  color: var(--laguna-on-dark);
+  font-family: var(--laguna-font), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  min-block-size: 100svh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================================
+   Full-bleed colour bands. Each <section> is a band; the .laguna-wrap inside
+   holds the max-width content. This is the alternating-rhythm backbone.
+   ========================================================================= */
+.laguna-band {
+  width: 100%;
+  position: relative;
+  overflow: clip;
+}
+.laguna-band--navy {
+  background: var(--laguna-bg);
+  color: var(--laguna-on-dark);
+}
+.laguna-band--lav {
+  background: var(--laguna-lav);
+  color: var(--laguna-ink);
+}
+.laguna-band--sky {
+  background: var(--laguna-sky);
+  color: var(--laguna-ink);
+}
+.laguna-band--grad {
+  background-image: var(--laguna-grad-blue);
+  color: #fff;
+}
+
+.laguna-wrap {
+  width: 100%;
+  max-width: var(--laguna-maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+  position: relative;
+  z-index: 1;
+}
+.laguna-section {
+  padding-block: clamp(3.5rem, 9vw, 6.5rem);
+}
+
+/* =========================================================================
+   Nav
+   ========================================================================= */
+.laguna-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.1rem;
+}
+.laguna-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  color: var(--laguna-on-dark);
+}
+.laguna-wordmark b {
+  font-weight: 600;
+}
+.laguna-wordmark .laguna-for {
+  background: var(--laguna-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+/* the small gradient ring glyph echoing Laguna's logo mark */
+.laguna-ring {
+  flex: none;
+  width: 30px;
+  height: 30px;
+}
+
+/* =========================================================================
+   Buttons, magenta->purple gradient primary + outline ghost
+   ========================================================================= */
+.laguna-btn,
+.laguna-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    opacity 0.16s ease;
+}
+.laguna-btn {
+  background-image: var(--laguna-grad);
+  color: #fff;
+  border: none;
+  box-shadow: 0 12px 30px -12px rgba(120, 59, 242, 0.7);
+}
+.laguna-btn-ghost {
+  background: transparent;
+  color: inherit;
+  border: 1.5px solid currentColor;
+  opacity: 0.85;
+}
+.laguna-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -12px rgba(230, 36, 198, 0.6);
+}
+.laguna-btn-ghost:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+/* solid white button, for use on the gradient close band */
+.laguna-btn--solid {
+  background: #fff;
+  background-image: none;
+  color: var(--laguna-purple);
+  box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.5);
+}
+.laguna-btn--solid:hover {
+  box-shadow: 0 16px 36px -14px rgba(0, 0, 0, 0.55);
+}
+.laguna-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.9rem;
+}
+
+/* =========================================================================
+   Typographic scale, Source Serif 4 display
+   ========================================================================= */
+.laguna-eyebrow {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  color: var(--laguna-purple);
+  margin-bottom: 0.85rem;
+}
+.laguna-band--navy .laguna-eyebrow,
+.laguna-band--grad .laguna-eyebrow {
+  color: #c4a9ff;
+}
+.laguna-h2 {
+  font-family: var(--laguna-serif-stack);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.1rem;
+  max-width: 20ch;
+}
+.laguna-lede {
+  color: var(--laguna-ink-soft);
+  max-width: 56ch;
+  font-size: 1.06rem;
+}
+.laguna-band--navy .laguna-lede,
+.laguna-band--grad .laguna-lede {
+  color: var(--laguna-on-dark-soft);
+}
+
+/* =========================================================================
+   Hero
+   ========================================================================= */
+.laguna-hero {
+  display: grid;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(3.5rem, 9vw, 6rem);
+}
+@media (min-width: 900px) {
+  .laguna-hero {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+.laguna-hero h1 {
+  font-family: var(--laguna-serif-stack);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6.4vw, 4.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.015em;
+}
+.laguna-hero h1 .laguna-heart {
+  -webkit-text-fill-color: initial;
+  font-size: 0.8em;
+}
+.laguna-hero .laguna-lede {
+  margin-top: 1.4rem;
+}
+
+/* glow orbs + sparkle field behind the hero (their signature dark-hero glow) */
+.laguna-hero-band::before,
+.laguna-hero-band::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+.laguna-hero-band::before {
+  width: 42vw;
+  height: 42vw;
+  max-width: 620px;
+  max-height: 620px;
+  top: -12%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(230, 36, 198, 0.55), transparent 68%);
+}
+.laguna-hero-band::after {
+  width: 38vw;
+  height: 38vw;
+  max-width: 520px;
+  max-height: 520px;
+  bottom: -18%;
+  left: -10%;
+  background: radial-gradient(circle, rgba(48, 48, 247, 0.5), transparent 68%);
+}
+
+/* sparkles, a decorative layer of 4-point stars */
+.laguna-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.laguna-spark {
+  position: absolute;
+  color: #fff;
+  opacity: 0.85;
+  animation: laguna-twinkle 3.4s ease-in-out infinite;
+}
+.laguna-spark svg {
+  display: block;
+}
+@keyframes laguna-twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+/* =========================================================================
+   Feature row, text one side + media the other (their section pattern)
+   ========================================================================= */
+.laguna-feature {
+  display: grid;
+  gap: clamp(1.5rem, 5vw, 3rem);
+  align-items: center;
+}
+@media (min-width: 860px) {
+  .laguna-feature {
+    grid-template-columns: 1fr 1fr;
+  }
+  .laguna-feature--rev .laguna-feature-media {
+    order: -1;
+  }
+}
+
+/* =========================================================================
+   Focus / capability cards
+   ========================================================================= */
+.laguna-grid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+  margin-top: 2rem;
+}
+.laguna-card {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(120, 59, 242, 0.16);
+  border-radius: var(--laguna-radius);
+  padding: 1.6rem;
+  backdrop-filter: blur(4px);
+}
+.laguna-band--navy .laguna-card {
+  background: var(--laguna-navy-soft);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.laguna-card-num {
+  font-family: var(--laguna-serif-stack);
+  font-weight: 700;
+  font-size: 1.1rem;
+  background: var(--laguna-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.7rem;
+}
+.laguna-card h3 {
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+.laguna-card p {
+  color: var(--laguna-ink-soft);
+  font-size: 0.96rem;
+}
+.laguna-band--navy .laguna-card p {
+  color: var(--laguna-on-dark-soft);
+}
+
+/* =========================================================================
+   Stat trio (their "We drive tangible value" band, reframed)
+   ========================================================================= */
+.laguna-stats {
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+.laguna-stat {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--laguna-radius);
+  padding: 1.8rem 1.6rem;
+  background: linear-gradient(
+    180deg,
+    rgba(120, 59, 242, 0.14),
+    rgba(11, 11, 82, 0.2)
+  );
+}
+.laguna-stat-lead {
+  font-family: var(--laguna-serif-stack);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  line-height: 1;
+  background: linear-gradient(119deg, #ff8be8, #b79bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.laguna-stat-label {
+  margin-top: 0.7rem;
+  color: var(--laguna-on-dark-soft);
+  font-size: 0.98rem;
+}
+
+/* =========================================================================
+   Experience list
+   ========================================================================= */
+.laguna-exp {
+  display: grid;
+  gap: 0;
+  margin-top: 1.5rem;
+}
+.laguna-exp-item {
+  display: grid;
+  gap: 0.3rem 1.5rem;
+  padding-block: 1.15rem;
+  border-top: 1px solid rgba(120, 59, 242, 0.18);
+}
+.laguna-exp-item:last-child {
+  border-bottom: 1px solid rgba(120, 59, 242, 0.18);
+}
+@media (min-width: 720px) {
+  .laguna-exp-item {
+    grid-template-columns: 12.5rem 1fr;
+    align-items: baseline;
+  }
+}
+.laguna-exp-when {
+  color: var(--laguna-purple);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+.laguna-exp-role {
+  font-weight: 600;
+}
+.laguna-exp-role span {
+  color: var(--laguna-ink-soft);
+  font-weight: 400;
+}
+.laguna-exp-note {
+  color: var(--laguna-ink-soft);
+  font-size: 0.96rem;
+  margin-top: 0.15rem;
+}
+
+/* =========================================================================
+   Selected work
+   ========================================================================= */
+.laguna-work {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+.laguna-work a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.4rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(120, 59, 242, 0.18);
+  border-radius: var(--laguna-radius);
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+.laguna-work a:hover {
+  transform: translateY(-2px);
+  border-color: var(--laguna-purple);
+  box-shadow: 0 14px 30px -18px rgba(120, 59, 242, 0.7);
+}
+.laguna-work-title {
+  font-weight: 600;
+}
+.laguna-work-arrow {
+  color: var(--laguna-purple);
+}
+.laguna-work-meta {
+  color: var(--laguna-ink-soft);
+  font-size: 0.9rem;
+  text-align: end;
+}
+
+/* =========================================================================
+   Speech-bubble accent (their conversation motif), reusable
+   ========================================================================= */
+.laguna-bubble {
+  display: inline-block;
+  background-image: var(--laguna-grad-blue);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem 1.2rem;
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 18px 40px -20px rgba(48, 48, 247, 0.8);
+}
+
+/* =========================================================================
+   Footer
+   ========================================================================= */
+.laguna-foot {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-block: 2.2rem;
+  color: var(--laguna-on-dark-soft);
+  font-size: 0.85rem;
+}
+.laguna-foot p {
+  margin: 0;
+}
+.laguna-foot p + p {
+  margin-top: 0.4rem;
+  opacity: 0.7;
+}
+
+/* =========================================================================
+   Centerpiece, the conversation-thread graphic
+   ========================================================================= */
+.laguna-cp {
+  max-width: 480px;
+  margin-inline: auto;
+}
+.laguna-cp .cp-label {
+  font-family: var(--laguna-font), ui-sans-serif, system-ui, sans-serif;
+}
+.laguna-cp .cp-lg {
+  font-size: 15px;
+  font-weight: 600;
+}
+.laguna-cp .cp-md {
+  font-size: 13px;
+  font-weight: 500;
+}
+.laguna-cp .cp-sm {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* threads draw in; nodes rise + fade. Under reduced motion the near-zero
+   durations (marketing-base.css) land straight on the assembled final state. */
+.laguna-cp .cp-thread {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: cp-draw 1.1s ease forwards;
+}
+.laguna-cp .cp-t1 {
+  animation-delay: 0.15s;
+}
+.laguna-cp .cp-t2 {
+  animation-delay: 0.8s;
+}
+.laguna-cp .cp-t3 {
+  animation-delay: 1.3s;
+}
+.laguna-cp .cp-node {
+  opacity: 0;
+  animation: cp-rise 0.55s ease forwards;
+}
+.laguna-cp .cp-d0 {
+  animation-delay: 0s;
+}
+.laguna-cp .cp-d1 {
+  animation-delay: 0.55s;
+}
+.laguna-cp .cp-d2 {
+  animation-delay: 1s;
+}
+.laguna-cp .cp-d2b {
+  animation-delay: 1.12s;
+}
+.laguna-cp .cp-d2c {
+  animation-delay: 1.24s;
+}
+.laguna-cp .cp-d3 {
+  animation-delay: 1.6s;
+}
+.laguna-cp .cp-spark {
+  animation: laguna-twinkle 2.6s ease-in-out infinite;
+}
+
+@keyframes cp-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes cp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
