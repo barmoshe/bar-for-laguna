@@ -91,19 +91,39 @@ const WORK = [
     href: "https://barmoshe.github.io/mdp/",
   },
   {
-    title: "DevX Is Dead. Long Live AgentX.",
-    meta: "Essay on AI-native engineering",
-    href: "https://medium.com/@barmoshe/devx-is-dead-long-live-agentx-bbcff45228fd",
-  },
-  {
     title: "Cross-language data processing with Temporal",
     meta: "Go · Python · TypeScript · Featured by Temporal",
     href: "https://temporal.io/code-exchange/cross-language-data-processing-service-with-temporal",
   },
   {
+    title: "DevX Is Dead. Long Live AgentX.",
+    meta: "Essay on AI-native engineering",
+    href: "https://medium.com/@barmoshe/devx-is-dead-long-live-agentx-bbcff45228fd",
+  },
+  {
+    title: "entailer",
+    meta: "Logic-validity toolkit · 6 packages on npm",
+    href: "https://github.com/barmoshe/entailer",
+  },
+  {
+    title: "MIDI GPT REST API",
+    meta: "LLM generation pipeline · OpenAI, retries + validation",
+    href: "https://github.com/barmoshe/AI_MIDI_API",
+  },
+  {
     title: "Biome Synth",
     meta: "Generative browser instrument · Web Audio",
     href: "https://biome-synth.lovable.app/",
+  },
+  {
+    title: "apartment-hunter",
+    meta: "Full-stack search app · Next.js on Vercel",
+    href: "https://apartment-hunter-one.vercel.app",
+  },
+  {
+    title: "Israelify",
+    meta: "Full-stack music app · React + Node + MongoDB",
+    href: "https://github.com/Gal-Or/IsraelifyApp",
   },
 ];
 
