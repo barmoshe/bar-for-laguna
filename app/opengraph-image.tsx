@@ -48,9 +48,11 @@ export default function OpengraphImage() {
               background: "linear-gradient(135deg, #e624c6, #783bf2)",
             }}
           />
-          <div style={{ fontSize: 30, fontWeight: 600 }}>
-            Bar Moshe
-            <span style={{ color: "#c4a9ff" }}>  for Laguna Health</span>
+          <div style={{ display: "flex", fontSize: 30, fontWeight: 600 }}>
+            <span>Bar Moshe</span>
+            <span style={{ color: "#c4a9ff", marginLeft: 10 }}>
+              for Laguna Health
+            </span>
           </div>
         </div>
 
