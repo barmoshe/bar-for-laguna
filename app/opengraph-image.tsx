@@ -57,23 +57,24 @@ export default function OpengraphImage() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05 }}>
-            Less typing, more
+          <div style={{ fontSize: 40, fontWeight: 600, color: "#c3c4ec" }}>
+            Bar Moshe
           </div>
           <div
             style={{
-              fontSize: 68,
+              fontSize: 66,
               fontWeight: 700,
               lineHeight: 1.05,
+              marginTop: 6,
               backgroundImage: "linear-gradient(119deg, #e624c6, #a98bff)",
               backgroundClip: "text",
               color: "transparent",
             }}
           >
-            engineering judgment.
+            AI Builder & Full-Stack Engineer
           </div>
           <div style={{ fontSize: 27, color: "#c3c4ec", marginTop: 22 }}>
-            A product-minded engineer, shipping with AI as leverage.
+            For the Product-Minded Engineer role at Laguna Health.
           </div>
         </div>
 

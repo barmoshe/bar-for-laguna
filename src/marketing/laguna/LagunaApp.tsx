@@ -19,23 +19,23 @@ const CV_HREF = (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + CV;
 const FOCUS = [
   {
     n: "01",
-    title: "Product judgment",
-    body: "I turn a rough ask into a scoped, sensible build, and I push back when a request does not hold up instead of just building it.",
+    title: "Full-stack depth",
+    body: "TypeScript across the stack: React and Next.js on the front, Node on the back, with AWS, Docker, Kubernetes and Terraform to ship and run it.",
   },
   {
     n: "02",
-    title: "AI as leverage, not a crutch",
-    body: "Cursor and Claude Code are how I ship. I point them at production-grade output and review everything that lands, so the judgment stays mine.",
+    title: "AI-assisted development",
+    body: "I build with Cursor and Claude Code day to day, and review and direct what they produce rather than accept it. Also MCP servers, agents and evals.",
   },
   {
     n: "03",
-    title: "The whole lifecycle",
-    body: "From capturing the requirement through design, build, ship, and iteration. I do not wait for a spec or a final design file to start.",
+    title: "From vague to shipped",
+    body: "I take an unclear ask, scope it, and build it end to end: design, build, deploy, iterate. No full spec or final design file needed to start.",
   },
   {
     n: "04",
-    title: "Fast into new domains",
-    body: "I pick up unfamiliar territory quickly, healthcare included. Curiosity is the default setting.",
+    title: "Ownership and range",
+    body: "Freelance and early-startup work with real ownership. I pick up unfamiliar domains quickly, healthcare included.",
   },
 ];
 
@@ -53,7 +53,7 @@ const STATS = [
   {
     lead: "hours to days",
     label:
-      "From a rough brief to a deployed, working MVP. The cycle time this role is built around.",
+      "How long it takes me to go from a rough brief to a deployed, working MVP.",
   },
 ];
 
@@ -219,16 +219,17 @@ export function LagunaApp() {
           <main id="main">
             <div className="laguna-hero" data-reveal>
               <div>
-                <h1>
-                  Less typing, more engineering judgment{" "}
-                  <span className="laguna-heart">💜</span>
-                </h1>
+                <p className="laguna-kicker">
+                  For the Product-Minded Engineer role
+                </p>
+                <h1>AI Builder and Full-Stack Engineer</h1>
                 <p className="laguna-lede">
-                  Laguna gives care managers their time back by taking the
-                  busywork off their plate. I do the same thing for myself as an
-                  engineer: Cursor and Claude Code handle the typing, and I spend
-                  the time saved on architecture, product calls, and review. This
-                  page is that idea, built in your brand.
+                  I ship AI and agentic products from idea to production: LLM
+                  apps, MCP tooling, and the full-stack systems and DevOps around
+                  them. Day to day I build with Cursor and Claude Code, with
+                  open-source tools published on npm and a project featured on
+                  Temporal&apos;s Code Exchange. I built this page in Laguna&apos;s
+                  brand as a working sample.
                 </p>
                 <div className="laguna-cta-row">
                   <a className="laguna-btn" href={waHref}>
@@ -251,8 +252,8 @@ export function LagunaApp() {
       {/* ============ focus areas (lavender) ============ */}
       <section className="laguna-band laguna-band--lav">
         <div className="laguna-wrap laguna-section" data-reveal>
-          <p className="laguna-eyebrow">Where I&apos;d plug in</p>
-          <h2 className="laguna-h2">Built to own the whole feature</h2>
+          <p className="laguna-eyebrow">How I work</p>
+          <h2 className="laguna-h2">What I bring</h2>
           <div className="laguna-grid">
             {FOCUS.map((f) => (
               <article className="laguna-card" key={f.n}>
@@ -268,8 +269,8 @@ export function LagunaApp() {
       {/* ============ stat trio (navy) ============ */}
       <section className="laguna-band laguna-band--navy">
         <div className="laguna-wrap laguna-section" data-reveal>
-          <p className="laguna-eyebrow">Proof, not adjectives</p>
-          <h2 className="laguna-h2">What I have actually shipped</h2>
+          <p className="laguna-eyebrow">In production</p>
+          <h2 className="laguna-h2">What I have shipped</h2>
           <div className="laguna-stats">
             {STATS.map((s) => (
               <div className="laguna-stat" key={s.lead}>
@@ -331,11 +332,11 @@ export function LagunaApp() {
       {/* ============ contact close (gradient) ============ */}
       <section className="laguna-band laguna-band--grad">
         <div className="laguna-wrap laguna-section" data-reveal>
-          <h2 className="laguna-h2">Let&apos;s talk about the pod.</h2>
+          <h2 className="laguna-h2">Let&apos;s talk.</h2>
           <p className="laguna-lede">
-            You are building small pods where one engineer owns the whole
-            feature, with a designer and a product person alongside. That is the
-            shape I want to work in. I would like to own one at Laguna Health.
+            I&apos;m based in Tel Aviv and looking for my next role as an
+            engineer. If this looks like a fit, I&apos;d be glad to talk, coffee
+            included. The full CV is a click away.
           </p>
           <div className="laguna-cta-row">
             <a className="laguna-btn laguna-btn--solid" href={waHref}>
@@ -353,7 +354,7 @@ export function LagunaApp() {
         <div className="laguna-wrap">
           <p>Built by Bar Moshe. Not affiliated with or endorsed by Laguna Health.</p>
           <p>
-            Laguna&apos;s colors, typefaces, and slogan are referenced here under
+            Laguna&apos;s colors and typefaces are referenced here under
             nominative fair use, for a job application.
           </p>
         </div>

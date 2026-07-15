@@ -238,6 +238,15 @@
 .laguna-hero .laguna-lede {
   margin-top: 1.4rem;
 }
+/* CV-style role kicker above the hero headline (on the navy band) */
+.laguna-kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b9a5ff;
+  margin-bottom: 0.95rem;
+}
 
 /* glow orbs + sparkle field behind the hero (their signature dark-hero glow) */
 .laguna-hero-band::before,
