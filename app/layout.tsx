@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Poppins, Source_Serif_4 } from "next/font/google";
 import "@/src/marketing/laguna/marketing-base.css";
 import "@/src/marketing/laguna/laguna.css";
@@ -41,7 +42,13 @@ export default function RootLayout({
       dir="ltr"
       className={`${body.variable} ${display.variable}`}
     >
-      <body>{children}</body>
+      <body>
+    <Script
+      src="https://bar-for-companies.vercel.app/track.js"
+      data-bar-for-id="laguna"
+      strategy="afterInteractive"
+    />
+{children}</body>
     </html>
   );
 }
